@@ -1,4 +1,5 @@
-
+quay.io/janrk/git-sync
+https://img.shields.io/docker/image-size/janrk/git-sync
 
 
           initContainers:
