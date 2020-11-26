@@ -1,8 +1,8 @@
-quay.io/janrk/git-sync
-
 <p align="center">
 <img src="https://img.shields.io/docker/image-size/janrk/git-sync" alt="image-size">
 </p>
+
+quay.io/janrk/git-sync
 
 
           initContainers:
