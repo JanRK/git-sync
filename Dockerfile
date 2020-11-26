@@ -6,4 +6,4 @@ RUN apt-get update; \
 
 ADD ./gitsync.ps1 /
 
-ENTRYPOINT [pwsh", "-f", "/gitsync.ps1"]
+ENTRYPOINT ["pwsh", "-f", "/gitsync.ps1"]
