@@ -19,9 +19,6 @@ quay.io/janrk/git-sync
               capabilities:
                 drop:
                 - ALL
-              readOnlyRootFilesystem: true
-              runAsNonRoot: true
-              runAsUser: 1000
             volumeMounts:
             - name: repos
               mountPath: /repos
