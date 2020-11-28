@@ -1,3 +1,7 @@
+while ($env:PAUSE -eq "True") {
+    Start-Sleep -Seconds 60
+}
+
 $gitRepoUrl = $env:GIT_SYNC_REPO
 $gitSourceDirectory = $env:GIT_SYNC_DEST
 $gitFolderName = ($gitRepoUrl -replace ".git") -split "/" | Select-Object -Last 1
@@ -22,8 +26,4 @@ if (Test-Path (Join-Path $gitDirectory ".ssh" -PathType Container)) {
     Write-Host "Cloning $gitRepoUrl to $gitDirectory..."
     Set-Location $gitSourceDirectory
     git clone $gitRepoUrl
-}
-
-while ($true) {
-    Start-Sleep -Seconds 60
 }
