@@ -12,7 +12,7 @@ if (($gitRepoUrl -notlike "git@*") -OR ($gitRepoUrl -notlike "*.git")) {
     $ErrorActionPreference = "Stop"
     throw "Only ssh is supported for GIT_SYNC_REPO for now. Currently set to $gitRepoUrl"
 }
-if (-not (Test-Path (Join-Path $gitSourceDirectory "info.txt" -PathType Leaf))) {
+if (-not (Test-Path (Join-Path $gitSourceDirectory "info.txt") -PathType Leaf)) {
     Get-ChildItem $gitSourceDirectory
     $ErrorActionPreference = "Stop"
     throw "GIT_SYNC_DEST - $gitSourceDirectory folder not found. Make sure you create an info.txt in your GIT_SYNC_DEST folder, so we can test if it's correctly mounted."
