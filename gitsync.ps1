@@ -14,9 +14,11 @@ $gitFolderName = ($gitRepoUrl -replace ".git") -split "/" | Select-Object -Last 
 $gitDirectory = Join-Path $gitSourceDirectory $gitFolderName
 
 if (Test-Path (Join-Path $gitDirectory ".ssh" -PathType Container)) {
+    Write-Host "$gitDirectory is already cloned, updating..."
     Set-Location $gitDirectory
     git pull
 } else {
+    Write-Host "Cloning $gitRepoUrl to $gitDirectory..."
     Set-Location $gitSourceDirectory
     git clone $gitRepoUrl
 }
