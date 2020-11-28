@@ -18,7 +18,7 @@ if (-not (Test-Path (Join-Path $gitSourceDirectory "info.txt") -PathType Leaf)) 
     throw "GIT_SYNC_DEST - $gitSourceDirectory folder not found. Make sure you create an info.txt in your GIT_SYNC_DEST folder, so we can test if it's correctly mounted."
 }
 
-if (Test-Path (Join-Path $gitDirectory ".ssh" -PathType Container)) {
+if (Test-Path (Join-Path $gitDirectory ".git") -PathType Container) {
     Write-Host "$gitDirectory is already cloned, updating..."
     Set-Location $gitDirectory
     git pull
